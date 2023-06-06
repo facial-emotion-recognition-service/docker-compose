@@ -23,5 +23,6 @@ services:
             - 8080:8080
         environment:
             - FILE_STORAGE_DIR=/esense_files/input_images
+            - URL_BASE_PREDICTOR=http://emosense:8000
         volumes:
           - ./docker_volume/input_images:/esense_files/input_images
