@@ -12,7 +12,7 @@ services:
             - IMAGE_INPUT_DIR=/esense_files/input_images
             - JSON_OUTPUT_DIR=/esense_files/output_json
         volumes:
-          - ./docker_volume:/esense_files
+          - ${SHARED_VOLUME}:/esense_files
 
     esensebff:
         image: esense-bff:latest
@@ -26,4 +26,4 @@ services:
             - REPORT_STORAGE_DIR=/esense_files/output_json
             - URL_BASE_PREDICTOR=http://emosense:8000
         volumes:
-          - ./docker_volume:/esense_files
+          - ${SHARED_VOLUME}:/esense_files
