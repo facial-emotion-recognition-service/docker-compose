@@ -14,6 +14,17 @@ services:
         volumes:
           - ${SHARED_VOLUME}:/esense_files
 
+    facial-extraction:
+        image: facial-extraction
+        hostname: facial_extraction
+        container_name: facial_extraction
+        ports:
+            - '8001:8000'
+        environment:
+            - IMAGE_INPUT_DIR=/esense_files/input_images
+        volumes:
+          - ${SHARED_VOLUME}:/esense_files
+
     esensebff:
         image: esense-bff:latest
         hostname: esensebff
