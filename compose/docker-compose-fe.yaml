@@ -9,4 +9,4 @@ services:
     environment:
         - IMAGE_INPUT_DIR=/esense_files/input_images
     volumes:
-      - ./docker_volume:/esense_files
+      - ${SHARED_VOLUME}:/esense_files
