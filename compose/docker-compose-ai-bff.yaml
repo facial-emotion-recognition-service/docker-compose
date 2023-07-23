@@ -1,9 +1,9 @@
 services:
 
-    esense:
-        image: emosense
-        hostname: emosense
-        container_name: emosense_ai
+    ai-fers:
+        image: ai-fers
+        hostname: ai-fers
+        container_name: ai-fers
         ports:
             - '8000:8000'
         environment:
@@ -25,16 +25,16 @@ services:
         volumes:
           - ${SHARED_VOLUME}:/esense_files
 
-    esensebff:
-        image: esense-bff:latest
-        hostname: esensebff
-        container_name: esensebff_2
+    fers-bff:
+        image: fers-bff:latest
+        hostname: fers-bff
+        container_name: fers-bff
         restart: always
         ports:
             - 8080:8080
         environment:
             - FILE_STORAGE_DIR=/esense_files/input_images
             - REPORT_STORAGE_DIR=/esense_files/output_json
-            - URL_BASE_PREDICTOR=http://emosense:8000
+            - URL_BASE_PREDICTOR=http://ai-fers:8000
         volumes:
           - ${SHARED_VOLUME}:/esense_files

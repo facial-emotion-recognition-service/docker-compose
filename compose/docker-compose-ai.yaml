@@ -1,9 +1,9 @@
 services:
 
-  esense:
-    image: emosense
-    hostname: emosense
-    container_name: emosense
+  ai-fers:
+    image: ai-fers
+    hostname: ai-fers
+    container_name: ai-fers
     ports:
         - '8000:8000'
     environment:
