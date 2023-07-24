@@ -7,12 +7,12 @@ services:
         ports:
             - '8000:8000'
         environment:
-            - MODEL_PATH=/esense_files/models/model.h5
-            - CONFIG_PATH=/esense_files/config/config.json
-            - IMAGE_INPUT_DIR=/esense_files/input_images
-            - JSON_OUTPUT_DIR=/esense_files/output_json
+            - MODEL_PATH=/fers_files/models/model.h5
+            - CONFIG_PATH=/fers_files/config/config.json
+            - IMAGE_INPUT_DIR=/fers_files/input_images
+            - JSON_OUTPUT_DIR=/fers_files/output_json
         volumes:
-          - ${SHARED_VOLUME}:/esense_files
+          - ${SHARED_VOLUME}:/fers_files
 
     facial-extraction:
         image: facial-extraction
@@ -21,9 +21,9 @@ services:
         ports:
             - '8001:8000'
         environment:
-            - IMAGE_INPUT_DIR=/esense_files/input_images
+            - IMAGE_INPUT_DIR=/fers_files/input_images
         volumes:
-          - ${SHARED_VOLUME}:/esense_files
+          - ${SHARED_VOLUME}:/fers_files
 
     fers-bff:
         image: fers-bff:latest
@@ -33,8 +33,8 @@ services:
         ports:
             - 8080:8080
         environment:
-            - FILE_STORAGE_DIR=/esense_files/input_images
-            - REPORT_STORAGE_DIR=/esense_files/output_json
+            - FILE_STORAGE_DIR=/fers_files/input_images
+            - REPORT_STORAGE_DIR=/fers_files/output_json
             - URL_BASE_PREDICTOR=http://ai-fers:8000
         volumes:
-          - ${SHARED_VOLUME}:/esense_files
+          - ${SHARED_VOLUME}:/fers_files

@@ -7,6 +7,6 @@ services:
     ports:
         - '8001:8000'
     environment:
-        - IMAGE_INPUT_DIR=/esense_files/input_images
+        - IMAGE_INPUT_DIR=/fers_files/input_images
     volumes:
-      - ${SHARED_VOLUME}:/esense_files
+      - ${SHARED_VOLUME}:/fers_files
