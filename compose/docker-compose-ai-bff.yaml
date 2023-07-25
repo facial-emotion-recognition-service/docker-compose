@@ -36,5 +36,6 @@ services:
             - FILE_STORAGE_DIR=/fers_files/input_images
             - REPORT_STORAGE_DIR=/fers_files/output_json
             - URL_BASE_PREDICTOR=http://ai-fers:8000
+            - URL_BASE_IMAGE_FACE=http://facial_extraction:8000
         volumes:
           - ${SHARED_VOLUME}:/fers_files
