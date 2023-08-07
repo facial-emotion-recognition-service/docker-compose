@@ -1,0 +1,13 @@
+services:
+
+  facial-extraction:
+    image: facial-clusterer
+    hostname: facial_clusterer
+    container_name: facial_clusterer
+    ports:
+        - '8002:8000'
+    environment:
+        - IMAGE_INPUT_DIR=/fers_files/input_images
+        - JSON_OUTPUT_DIR=/fers_files/output_json
+    volumes:
+      - ${SHARED_VOLUME}:/fers_files
