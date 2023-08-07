@@ -7,8 +7,8 @@ services:
     ports:
         - '8002:8000'
     environment:
-        - INPUT_FACES_DIR=/facial_clusterer/input_images
-        - JSON_OUTPUT_DIR=/facial_clusterer/output_json
+        - IMAGE_INPUT_DIR=/fers_files/input_images
+        - JSON_OUTPUT_DIR=/fers_files/output_json
     volumes:
-      - ${SHARED_VOLUME}/input_images:/facial_clusterer/input_images
-      - ${SHARED_VOLUME}/output_json:/facial_clusterer/output_json
+      - ${SHARED_VOLUME}/input_images:/fers_files/input_images
+      - ${SHARED_VOLUME}/output_json:/fers_files/output_json
