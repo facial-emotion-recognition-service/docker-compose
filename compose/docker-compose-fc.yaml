@@ -10,5 +10,4 @@ services:
         - IMAGE_INPUT_DIR=/fers_files/input_images
         - JSON_OUTPUT_DIR=/fers_files/output_json
     volumes:
-      - ${SHARED_VOLUME}/input_images:/fers_files/input_images
-      - ${SHARED_VOLUME}/output_json:/fers_files/output_json
+      - ${SHARED_VOLUME}:/fers_files
